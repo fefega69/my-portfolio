@@ -248,14 +248,14 @@ html {
 }
 
 .section-menus__card-image {
-    width: 300px;
+    width: 250px;
     height: auto;
     object-fit: contain;
 }
 
 .section-menus__gallery-image {
     height: auto;      /* Keeps the aspect ratio perfect */
-    width: 300px;       /* Spans the full width of the card padding */
+    width: 500px;       /* Spans the full width of the card padding */
     object-fit: contain; /* Ensures the image doesn't look squished */
 }
 
