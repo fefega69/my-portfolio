@@ -1,206 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Computer Science Department</title>
-
-	<link rel="stylesheet" media="screen" href="style.css">
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="Dave Shea">
-	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
-	<meta name="robots" content="all">
-
-
-	<!--[if lt IE 9]>
-	<script src="script/html5shiv.js"></script>
-	<![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Creative Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<!--
+    <nav class="navbar">
+        <h1 class="logo">Dev<span>Portfolio</span></h1>
+        <div class="nav-buttons">
+            <button onclick="showPage('home')" class="nav-btn">Home</button>
+            <button onclick="showPage('projects')" class="nav-btn">Projects</button>
+        </div>
+    </nav>
 
+    <section id="home" class="page-section">
+        <div class="hero">
+            <h1>Welcome to My Workspace</h1>
+            <p>I build interactive web experiences with HTML, CSS, and JavaScript.</p>
+            <button class="primary-button" onclick="showPage('projects')">View My Work</button>
+        </div>
+    </section>
 
+    <section id="projects" class="page-section" style="display: none;">
+        <h1 class="section-title">My <span>Projects</span></h1>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="card-icon">👤</div>
+                <h3>Personal</h3>
+                <p>A simple personal portfolio website showcasing information about myself.</p>
+                <a href="personal/index.html" class="view-link" target="_blank">Launch Project</a>
+            </div>
 
-	View source is a feature, not a bug. Thanks for your curiosity and
-	interest in participating!
+            <div class="project-card">
+                <div class="card-icon">🏢</div>
+                <h3>Company</h3>
+                <p>A professional website for a fictional company showcasing their services and products.</p>
+                <a href="company/index.html" class="view-link" target="_blank">Launch Project</a>
+            </div>
 
-	Here are the submission guidelines for the new and improved csszengarden.com:
+            <div class="project-card">
+                <div class="card-icon">🎓</div>
+                <h3>University of Manila</h3>
+                <p>A website for the University of Manila showcasing their academic programs and campus life.</p>
+                <a href="um/index.html" class="view-link" target="_blank">Launch Project</a>
+            </div>
 
-	- CSS3? Of course! Prefix for ALL browsers where necessary.
-	- go responsive; test your layout at multiple screen sizes.
-	- your browser testing baseline: IE9+, recent Chrome/Firefox/Safari, and iOS/Android
-	- Graceful degradation is acceptable, and in fact highly encouraged.
-	- use classes for styling. Don't use ids.
-	- web fonts are cool, just make sure you have a license to share the files. Hosted
-	  services that are applied via the CSS file (ie. Google Fonts) will work fine, but
-	  most that require custom HTML won't. TypeKit is supported, see the readme on this
-	  page for usage instructions: https://github.com/mezzoblue/csszengarden.com/
+            <div class="project-card">
+                <div class="card-icon">💻</div>
+                <h3>Computer Science</h3>
+                <p>A website for the Computer Science department showcasing their academic programs and research.</p>
+                <a href="bscs/index.html" class="view-link" target="_blank">Launch Project</a>
+            </div>
+        </div>
+    </section>
 
-	And a few tips on building your CSS file:
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.style.display = 'none');
 
-	- use :first-child, :last-child and :nth-child to get at non-classed elements
-	- use ::before and ::after to create pseudo-elements for extra styling
-	- use multiple background images to apply as many as you need to any element
-	- use the Kellum Method for image replacement, if still needed. http://goo.gl/GXxdI
-	- don't rely on the extra divs at the bottom. Use ::before and ::after instead.
-
-		
--->
-
-<body id="css-zen-garden">
-<div class="page-wrapper">
-
-	<section class="intro" id="zen-intro">
-		<header role="banner">
-			<h1>CSS Zen Garden</h1>
-			<h2>The Beauty of <abbr title="Cascading Style Sheets">CSS</abbr> Design</h2>
-		</header>
-        
-		<div class="summary" id="zen-summary" role="article">
-            <p>This is a page about the history, the faculty, and events of University of Manila's Computer Science Department.</p>
-		</div>
-
-		<div class="preamble" id="zen-preamble" role="article">
-			<h3>About</h3>
-            <h1 class="section-header">History</h1>
-            <p class="section-desc">
-                <p>
-                    The University of Manila, is a private, 
-                    non-sectarian coeducational basic and higher education institution in the heart of Sampaloc District in Manila, Philippines. 
-                    It was founded on October 5, 1913, as the Instituto de Manila,[2] by Apolinario G. de los Santos, 
-                    Mariano V. de los Santos, Maria de los Santos, Buenaventura J. Bello and Antonio Rivero. 
-                    The first three were siblings. They named their school Instituto de Manila, 
-                    after the city of Manila and Apolinario G. de los Santos was elected as the first director of the school.
-                </p>
-            </p>
-            <h1 class="section-header">Mission</h1>
-            <p class="section-desc">
-                <p>
-                    <p class="section-desc">ACE - to Accomplish something with complete success.</p>
-                    <p class="section-desc">A - Anchor in the hearts of the youth the Love of country, science, and virtue.</p>
-                    <p class="section-desc">C - Create an atmosphere of academic excellence and competence.</p>
-                    <p class="section-desc">E - Empower the youth with modern scientific technological skills in braving the challenges of the global society.</p>
-                </p>
-            </p>
-            <h1 class="section-header">Vision</h1>
-            <p class="section-desc">
-                <p>
-                    <p>To impart to the future generations the university of manila trilogy of ideals: love of country, 
-                    love of science and love of virtue, in making the lives of others better, brighter, lighter and more liveable by 
-                    making quality education accessible to all.</p>
-                </p>
-            </p>
-            <h1 class="section-header">Motto</h1>
-            <p class="section-desc">
-                <p>
-                    To acquire knowledge and skills for the benefit of mankind
-                </p>
-            </p>
-		</div>
-	</section>
-
-	<div class="main supporting" id="zen-supporting" role="main">
-		<div class="explanation" id="zen-explanation" role="article">
-			<h3>Faculty</h3>
-            <p>
-                The faculty members of the Computer Science department are highly qualified and experienced in their respective fields. They are dedicated to providing quality education and mentorship to students.
-            </p>
-            <h1>
-                Professor Joselito Borces
-            </h1>
-            <h1>
-                Professor Marjorie Borces
-            </h1>
-            <h1>
-                Professor Rogelio Plaza
-            </h1>
-            <h1>
-                Professor Stanley Verde
-            </h1>
-            <h1>
-                Professor Rochelle Anne Fallorina
-            </h1>
-            <h1>
-                Professor Ervin Ramos
-            </h1>
-		</div>
-
-		<div class="requirements" id="zen-requirements" role="article">
-			<h3>CS Event(s)</h3>
-            <p>
-                The Computer Science department regularly organizes events to foster friendship and camaraderie among students.
-            </p>
-            <p><b>
-                Computer Science department's 2025 Christmas Party.
-            </b></p>
-            <img src="images/cs-event2.jpg" alt="CS Event" class="event-photo">
-            <p>
-                5 lucky raffle winners of the Computer Science department's 2025 Christmas Party.
-            </p>
-            <img src="images/cs-event3.jpg" alt="CS Event" class="event-photo">
-            <img src="images/cs-event4.jpg" alt="CS Event" class="event-photo">
-            <p>
-                A photo of Professor Fallorina during the Computer Science department's 2025 Christmas Party.
-            </p>
-            <p><b>
-                On September 20, 2025, the University of Manila actively participated in the International Coastal Clean-Up Drive held at By the Bay.
-            </b></p>
-            <p>
-                A total of 71 participants—composed of faculty members, non-teaching staff, and students from the Colleges of Computer Science, Japanology, and Foreign Service—volunteered their time and effort for this meaningful environmental initiative.
-            </p>
-            <img src="images/cs-event5.jpg" alt="CS Event" class="event-photo">
-            <img src="images/cs-event6.jpg" alt="CS Event" class="event-photo">
-            <img src="images/cs-event7.jpg" alt="CS Event" class="event-photo">
-
-            <p><b>
-                BSCS Acquaintance Party 2025
-            </b></p>
-            <p>
-                Here’s the last set of snaps from our unforgettable night last August 23, 2025.
-            </p>
-            <img src="images/cs-event8.jpg" alt="CS Event" class="event-photo">
-            <img src="images/cs-event9.jpg" alt="CS Event" class="event-photo">
-            <img src="images/cs-event10.jpg" alt="CS Event" class="event-photo">
-            <img src="images/cs-event11.jpg" alt="CS Event" class="event-photo">
-		</div>
-	</div>
-
-
-	<aside class="sidebar" role="complementary">
-		<div class="wrapper">
-
-			<div class="design-selection" id="design-selection">
-				<h3 class="select">Select a Page:</h3>
-				<nav role="navigation">
-					<ul>
-					<li>
-						<a href="" class="design-name">University of Manila</a> 
-					</li>					
-					<li>
-						<a href="" class="design-name">Company</a> 			
-					</li>					
-					<li>
-						<a href="" class="design-name">Personal</a>		
-					</li>
-				</nav>
-			</div>
-		</div>
-	</aside>
-
-
-</div>
-
-<!--
-
-	These superfluous divs/spans were originally provided as catch-alls to add extra imagery.
-	These days we have full ::before and ::after support, favour using those instead.
-	These only remain for historical design compatibility. They might go away one day.
-		
--->
-<div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
-<div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
-
+            // Show the selected section
+            document.getElementById(pageId).style.display = 'block';
+        }
+    </script>
 </body>
 </html>

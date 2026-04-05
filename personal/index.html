@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Personal Website</title>
+
+	<link rel="stylesheet" media="screen" href="style.css?v=8may2013">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://www.csszengarden.com/zengarden.xml">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Dave Shea">
+	<meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
+	<meta name="robots" content="all">
+
+
+	<!--[if lt IE 9]>
+	<script src="script/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<!--
+
+
+
+	View source is a feature, not a bug. Thanks for your curiosity and
+	interest in participating!
+
+	Here are the submission guidelines for the new and improved csszengarden.com:
+
+	- CSS3? Of course! Prefix for ALL browsers where necessary.
+	- go responsive; test your layout at multiple screen sizes.
+	- your browser testing baseline: IE9+, recent Chrome/Firefox/Safari, and iOS/Android
+	- Graceful degradation is acceptable, and in fact highly encouraged.
+	- use classes for styling. Don't use ids.
+	- web fonts are cool, just make sure you have a license to share the files. Hosted
+	  services that are applied via the CSS file (ie. Google Fonts) will work fine, but
+	  most that require custom HTML won't. TypeKit is supported, see the readme on this
+	  page for usage instructions: https://github.com/mezzoblue/csszengarden.com/
+
+	And a few tips on building your CSS file:
+
+	- use :first-child, :last-child and :nth-child to get at non-classed elements
+	- use ::before and ::after to create pseudo-elements for extra styling
+	- use multiple background images to apply as many as you need to any element
+	- use the Kellum Method for image replacement, if still needed. http://goo.gl/GXxdI
+	- don't rely on the extra divs at the bottom. Use ::before and ::after instead.
+
+		
+-->
+
+<body id="css-zen-garden">
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>Personal</h1>
+			<h2>The Beauty of <abbr title="Cascading Style Sheets">Personal</abbr> Website</h2>
+		</header>
+
+		<div class="summary" id="zen-summary" role="article">
+		</div>
+
+		<div class="preamble" id="zen-preamble" role="article">
+			<h3>Preamble</h3>
+			<p>In this personal page, you will be able to feast your eyes upon my <abbr title="Document Object Model">Immaculate Visage</abbr>, my <abbr title="Cascading Style Sheets">family</abbr>, my resume, and an example of my work.</p>
+		</div>
+	</section>
+
+	<div class="main supporting" id="zen-supporting" role="main">
+		<div class="explanation" id="zen-explanation" role="article">
+		</div>
+		<div class="side-by-side-container">
+
+			<div class="text-content">
+				<h3>So Who Am I?</h3>
+				<p>I am the one known as <abbr title="Cascading Style Sheets">Perion, Franz Frederick</abbr>, I am a web developer passionate about creating beautiful and functional websites. 
+				<p>I was birthed at the day of March 7, 2001, I am currently 25 years old.</p>These <abbr title="HyperText Markup Language">HTML</abbr> projects showcase my work and provides information about me.</p>
+			</div>
+			<img src="images/my-photo.jpg" alt="Beautiful Blossoms" class="side-image">
+		</div>
+
+		<div class="resume-container">
+			<img src="images/my-resume.png" alt="My Resume" style="width: 100%; height: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+		</div>
+
+		<div class="participation" id="zen-participation" role="article">
+			<h3>Family Picture</h3>
+			<p>This is a photo of my family.</p>
+			<img src="images/family-photo.jpg" alt="Family Photo" class="family-photo">
+			<p>This is a photo of my family while we were in Baguio City.</p>
+		</div>
+
+		<div class="benefits" id="zen-benefits" role="article">
+			<h3>Friend-Group Picture</h3>
+			<p>This is a photo of my friend group.</p>
+			<img src="images/friend-photo.jpg" alt="Friend Group Photo" class="friend-photo">
+			<p>This is a photo of my friend group during our first year of college.</p>
+		</div>
+
+		<div class="requirements" id="zen-requirements" role="article">
+			<h3>Work Example</h3>
+			<div class = "alcohol">
+				<h1>Alcohol Eligibility Checker</h1>
+				<input type="text" id="age" placeholder="Age">
+				<button onclick="checkAlcohol()">Check Alcohol Eligibility</button>
+			</div>
+			<script>
+				function checkAlcohol() {
+					let age = Number(document.getElementById("age").value);
+					if (age >= 18) {
+						alert("You are eligible to purchase alcohol.");
+					} else {
+						alert("You are not eligible to purchase alcohol.");
+					}
+				}
+			</script>
+			<div class="container">
+				<h1>Simple Addition Calculator</h1>
+				<input type="text" id="num1" placeholder="First number">
+				<input type="text" id="num2" placeholder="Second number">
+				<button onclick="add()">Add</button>
+				<input type="text" id="addition" placeholder="Result" readonly>
+			</div>
+
+			<script>
+			function add() {
+					let n1 = Number(document.getElementById("num1").value);
+					let n2 = Number(document.getElementById("num2").value);
+					document.getElementById("addition").value = n1 + n2;
+				}
+			</script>
+
+			<div class="container">
+				<h1>Division Calculator</h1>
+				
+				<div class="input-group">
+					<label for="dividend">Dividend:</label>
+					<input type="number" id="dividend" placeholder="Enter first number">
+				</div>
+				
+				<div class="input-group">
+					<label for="divisor">Divisor:</label>
+					<input type="number" id="divisor" placeholder="Enter second number">
+				</div>
+				
+				<button onclick="divide()">Divide</button>
+				
+				<div class="result" id="result"></div>
+			</div>
+			
+			<script>
+				function divide() {
+					const dividend = parseFloat(document.getElementById('dividend').value);
+					const divisor = parseFloat(document.getElementById('divisor').value);
+					const resultDiv = document.getElementById('result');
+					
+					if (isNaN(dividend) || isNaN(divisor)) {
+						resultDiv.textContent = 'Please enter valid numbers';
+						resultDiv.classList.add('show');
+						return;
+					}
+					
+					if (divisor === 0) {
+						resultDiv.textContent = 'Cannot divide by zero';
+						resultDiv.classList.add('show');
+						return;
+					}
+					
+					const result = (dividend / divisor).toFixed(2);
+					resultDiv.textContent = `Result: ${result}`;
+					resultDiv.classList.add('show');
+				}
+				
+				document.getElementById('divisor').addEventListener('keypress', function(e) {
+					if (e.key === 'Enter') divide();
+				});
+			</script>
+
+			<div class="container">
+				<h1>Multiplication Calculator</h1>
+				<input type="number" id="mult1" placeholder="Enter first number">
+				<input type="number" id="mult2" placeholder="Enter second number">
+				<br>
+				<button onclick="multiply()">Multiply</button>
+				<div id="product"></div>
+			</div>
+
+			<script>
+				function multiply() {
+					const num1 = parseFloat(document.getElementById('mult1').value);
+					const num2 = parseFloat(document.getElementById('mult2').value);
+					
+					if (isNaN(num1) || isNaN(num2)) {
+						document.getElementById('product').textContent = 'Please enter valid numbers';
+						return;
+					}
+					
+					const product = num1 * num2;
+					document.getElementById('product').textContent = `${num1} × ${num2} = ${product}`;
+				}
+			</script>
+
+			<div class="container">
+				<h1>Subtraction Calculator</h1>
+				<input type="text" id="sub1" placeholder="First number">
+				<input type="text" id="sub2" placeholder="Second number">
+				<button onclick="sub()">Sub</button>
+				<input type="text" id="difference" placeholder="Result" readonly>
+			</div>
+
+
+			<script
+		>
+				function sub() {
+					let s1 = Number(document.getElementById("sub1").value);
+					let s2 = Number(document.getElementById("sub2").value);
+					document.getElementById("difference").value = s1 - s2;
+				}
+			</script>	
+
+			<div class = "HelloWorld">
+				<h1>Hello, World!</h1>
+				<button onclick="alert('Hello, World!')">Click Me!</button>
+			</div>
+
+			<div class = "birthday">
+				<h1>Birthday Greeting</h1>
+				<input type=" text" id="name" placeholder="Name">
+				<button onclick="Birthday()">Let see!</button>
+			</div>
+			<script>
+			function Birthday(){
+				let name = document.getElementById("name").value;
+				alert("Happy Birthday " + name + "! Wishing you a wonderful year ahead.");
+			}
+			
+			</script>
+
+			<div class="alcohol">
+				<h1>JavaScript Calculations</h1>
+				<script type = "text/javascript">
+					var sec = 60;
+					var min = 60;
+					var hr = 24;
+					document.write("Seconds in a minute: " + sec + "<br>");
+					document.write("Seconds in an hour: " + sec * min + "<br>");
+					document.write("Seconds in a day: " + sec * min * hr + "<br>");
+				</script>
+			</div>
+			
+			<div class = "ifelse">
+				<h1>If-Else Statement Example</h1>
+				<input type="text" id="ifelsename" placeholder="Name">
+				<button onclick="RUN()">RUN</button>
+			</div>
+			<script>
+				function RUN(){
+					let name = document.getElementById("ifelsename").value;
+					if(name === "Franz"){
+						alert("Hello Franz! Welcome back!");
+					} else {
+						alert("Hello " + name + "! Nice to meet you!");
+					}
+				}
+			</script>
+
+			<div class="alcohol">
+				<h1>Image Display Example</h1>
+				<button onclick="sad()">Sad face</button>
+				<button onclick="happy()">Happy face</button>
+
+				<div class="display-area" style="margin-top: 20px;">
+					<img id="face-image" src="" alt="" style="max-width: 300px; display: none; border-radius: 10px;">
+				</div>
+				<script>
+					function sad() {
+						const imgElement = document.getElementById('face-image');
+						imgElement.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuUl-5vHCj28yOLm2VXJk_Z8K4EFNWFEtVZw&s";
+						imgElement.style.display = "block"; // Makes the image visible
+					}
+
+					function happy() {
+						const imgElement = document.getElementById('face-image');
+						imgElement.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnt3YMTCH0l9Lau3-MmSQq61jmuFbBlx8tDQ&s";
+						imgElement.style.display = "block"; // Makes the image visible
+					}
+				</script>
+			</div>
+
+			<div class = "alcohol">
+				<h1>Prompt Example</h1>
+				<input type=" text" id="PromptName" placeholder="Name">
+				<button onclick="PROMPTNAME()">RUN</button>
+			</div>
+			<script>
+				function PROMPTNAME(){
+					let promptname = document.getElementById("PromptName").value;
+			
+					alert("Hello " + promptname + "! Nice to meet you!");
+				}
+			</script>
+
+			<div class = "alcohol">
+				<h1>Name Popup</h1>
+				<input type=" text" id="namepopup" placeholder="Name">
+				<button onclick="NAMEPOPUP()">RUN</button>
+			</div>
+			<script>  
+				function NAMEPOPUP(){
+					let namepopup = document.getElementById("namepopup").value;
+			
+					alert("Your name is " + namepopup );
+				}
+			</script>
+
+			<div class="alcohol">
+				<h1>Show Current Date</h1>
+				<button onclick="showDate()">Show Current Date</button>
+			</div>
+			<script>
+				function showDate() {
+					let currentDate = new Date();
+					alert("Today is: " + currentDate.toDateString());
+				}
+			</script>
+
+			<div class="timer">
+				<h1>Countdown Timer</h1>
+				<input type="text" id="timer" readonly value="60">
+				<button id="start-btn" onclick="startTimer()">Start Timer</button>
+			</div>
+			
+			<script>
+				var timeLeft = 60;
+				var timerId;
+
+				function startTimer() {
+					// 1. Disable the button so it can't be clicked again
+					document.getElementById("start-btn").disabled = true;
+					
+					// 2. Start the interval
+					timerId = setInterval(countdown, 1000);
+				}
+
+				function countdown() {
+					const timerInput = document.getElementById("timer");
+					const startBtn = document.getElementById("start-btn");
+
+					if (timeLeft <= 0) {
+						clearInterval(timerId);
+						timerInput.value = 0;
+						alert("Time's up!");
+
+						// 3. Re-enable the button so they can try again
+						startBtn.disabled = false;
+						
+						// 4. Reset the time variable for the next run
+						timeLeft = 60; 
+					} else {
+						timerInput.value = timeLeft;
+						timeLeft--;
+					}
+				}
+			</script>
+		</div>
+	</div>
+
+
+	<aside class="sidebar" role="complementary">
+		<div class="wrapper">
+
+			<div class="design-selection" id="design-selection">
+				<h3 class="select">Select a Page:</h3>
+				<nav role="navigation">
+					<ul>
+					<li>
+						<a href="../bscs/index.html" class="design-name">Computer Science</a>		
+					</li>
+					<li>
+						<a href="../um/index.html" class="design-name">University of Manila</a> 
+					</li>					
+					<li>
+						<a href="../company/index.html" class="design-name">Company</a> 			
+					</li>					
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</aside>
+
+
+</div>
+
+<!--
+
+	These superfluous divs/spans were originally provided as catch-alls to add extra imagery.
+	These days we have full ::before and ::after support, favour using those instead.
+	These only remain for historical design compatibility. They might go away one day.
+		
+-->
+<div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
+<div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
+
+</body>
+</html>
