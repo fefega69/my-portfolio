@@ -314,38 +314,6 @@
 <script src="https://unpkg.com/scrollreveal"></script>
 <script>
 
-    
-
-    // 1. Your Service Data
-    const servicesData = [
-        { id: "saber", title: "Fate/grand Order PVC Figure - Saber Arturia Pendragon Standard Edition 1/7", 
-        bwPrice: 270, img: "saber" },
-        { id: "oda", title: "", 
-        bwPrice: 270, img: "oda" }
-    ];
-
-    const container = document.getElementById('services-container');
-
-    // 2. Function to generate the cards
-    function renderCards() {
-        container.innerHTML = servicesData.map(service => `
-            
-        `).join('');
-    }
-
-    // 3. Function to handle the toggle click
-    function updateVariant(id, type, price) {
-        const service = servicesData.find(s => s.id === id);
-        document.getElementById(`price-${id}`).innerText = `$${price}`;
-        document.getElementById(`title-${id}`).innerText = `${service.title} - ${type === 'bw' ? 'BW' : 'Colored'}`;
-        document.getElementById(`img-${id}`).src = `images/${service.img}-${type}.jpg`;
-    }
-
-    // Run the render on page load
-    renderCards();
-</script>
-<script>
-
     const headerMenuToggle = document.querySelector('.header__menu-toggle');
     const headerMenus = document.querySelector('.header__menus');
 
