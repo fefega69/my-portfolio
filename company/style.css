@@ -77,13 +77,11 @@ html {
 }
 
 .section-title {
-    font-family: 'Praise', cursive;
     font-size: 50px;
     color: var(--primary-color);
 }
 
 .section-title span {
-    font-family: 'Praise', cursive;
     color: var(--secondary-color);
 }
 
@@ -227,13 +225,29 @@ html {
 
 .section-menus__card {
     border: 3px solid var(--border-primary-color);
+    width: 280px;
+    max-width: 100%;
+    border-radius: var(--medium-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 240px;
+    justify-content: center;
+    margin-top: 64px;
+    cursor: pointer;
+    padding: 24px;
+    transition: 300ms ease;
+}
+
+.section-contact__card {
+    border: 3px solid var(--border-primary-color);
     min-width: 280px;
     border-radius: var(--medium-radius);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 240px;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 64px;
     cursor: pointer;
     padding: 24px;
@@ -262,7 +276,7 @@ html {
 }
 
 .section-menus__card-image {
-    width: 250px;
+    width: 280px;
     height: auto;
     object-fit: contain;
 }
@@ -503,13 +517,11 @@ html {
 
 .footer__title {
     color: white;
-    font-family: 'Praise', cursive;
     font-size: 50px;
 }
 
 .footer__title span {
     color: var(--secondary-color);
-    font-family: 'Praise', cursive;
 }
 
 .footer__menus {
@@ -655,4 +667,11 @@ html {
 .card-link-wrapper {
     text-decoration: none;
     color: inherit;
+}
+
+.shop-header {
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center;    /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically (if container has height) */
 }
